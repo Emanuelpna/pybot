@@ -1,0 +1,22 @@
+.chatContainer {
+  flex: 1;
+  margin: auto;
+  width: 800px;
+  max-height: 800px;
+  padding: 24px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+}
+
+.chatMessagesContainer {
+  max-height: 800px;
+  overflow-y: auto;
+}
+
+.chatMessagesWrapper {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+}

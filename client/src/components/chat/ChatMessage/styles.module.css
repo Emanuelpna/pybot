@@ -1,0 +1,31 @@
+.chatMessage {
+  --shadow-color: 344deg 14% 79%;
+
+  padding: 24px;
+  min-height: 80px;
+  width: fit-content;
+  background: #fff5ed;
+  border-radius: 24px;
+}
+
+.chatMessage.botResponse {
+  margin-left: auto;
+  border-bottom-right-radius: 0;
+}
+
+.chatMessage.userQuestion {
+  margin-right: auto;
+  border-bottom-left-radius: 0;
+}
+
+/*
+  box-shadow: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.19),
+        0.9px 1.8px 2.5px -0.5px hsl(var(--shadow-color) / 0.24),
+        2px 4px 5.6px -1.1px hsl(var(--shadow-color) / 0.29),
+        4.6px 9.1px 12.8px -1.6px hsl(var(--shadow-color) / 0.35);
+
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+ */

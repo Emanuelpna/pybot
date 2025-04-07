@@ -1,35 +1,61 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+
+import { Message } from "@/domain/models/Message";
+import { ChatMessageType } from "@/domain/models/ChatMessageType";
+
+import { ChatbotService } from "@/data/ChatbotService";
+
+import { Logo } from "@/components/commons/Logo/Logo";
+import { ChatInput } from "@/components/chat/ChatInput/ChatInput";
+import { ChatMessage } from "@/components/chat/ChatMessage/ChatMessage";
+import { ChatContainer } from "@/components/chat/ChatContainer/ChatContainer";
+
+import "./global.css";
+
+const freeze = (time: number) =>
+  new Promise((resolve) => setTimeout(() => resolve(true), time));
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [messages, setMessages] = useState<Message[]>([]);
+
+  async function onFormSubmit(formData: FormData) {
+    const userInput = formData.get("user_input");
+
+    if (!userInput) return;
+
+    setMessages((messages) => [
+      ...messages,
+      new Message("José", userInput?.toString() ?? "", ChatMessageType.USER),
+    ]);
+
+    await freeze(100);
+
+    const response = await ChatbotService.askChatbot(userInput.toString());
+
+    if (!response) return;
+
+    setMessages((messages) => [
+      ...messages,
+      new Message("Chatbot NLTK", response.message, ChatMessageType.CHATBOT),
+    ]);
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Logo />
+
+      <ChatContainer footer={<ChatInput onSubmitCallback={onFormSubmit} />}>
+        {messages.map((message) => (
+          <ChatMessage
+            key={message.getSentAt().toISOString()}
+            content={message.getContent()}
+            sender={message.getSender()}
+            type={message.getType()}
+          />
+        ))}
+      </ChatContainer>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

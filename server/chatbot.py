@@ -58,6 +58,3 @@ def iniciar_chat():
 
         response = chatbot.respond(user_input)
         print("ChatBot: ", response)
-
-
-# iniciar_chat()

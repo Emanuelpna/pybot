@@ -1,4 +1,4 @@
-# Chatbot NLTK
+# PyBot
 
 Para usar o projeto, é necessário iniciar ambas as aplicações web e de servidor.
 

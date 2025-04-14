@@ -20,7 +20,7 @@ app.add_middleware(
 
 @app.get('/')
 def read_root():
-    return {'message': 'Chatbot NLTK'}
+    return {'message': 'PyBot'}
 
 @app.get('/chat')
 def read_root(user_message: str):

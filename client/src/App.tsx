@@ -36,7 +36,7 @@ function App() {
 
     setMessages((messages) => [
       ...messages,
-      new Message("Chatbot NLTK", response.message, ChatMessageType.CHATBOT),
+      new Message("PyBot", response.message, ChatMessageType.CHATBOT),
     ]);
   }
 

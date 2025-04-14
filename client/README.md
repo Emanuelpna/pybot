@@ -13,4 +13,3 @@ Para rodar em movo de produção, execute o comando abaixo e acesse o app em <ht
 ```bash
 npm run build && npm run preview
 ```
-

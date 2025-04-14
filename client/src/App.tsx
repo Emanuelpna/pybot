@@ -12,9 +12,6 @@ import { ChatContainer } from "@/components/chat/ChatContainer/ChatContainer";
 
 import "./global.css";
 
-const freeze = (time: number) =>
-  new Promise((resolve) => setTimeout(() => resolve(true), time));
-
 function App() {
   const [messages, setMessages] = useState<Message[]>([]);
 
@@ -25,10 +22,8 @@ function App() {
 
     setMessages((messages) => [
       ...messages,
-      new Message("José", userInput?.toString() ?? "", ChatMessageType.USER),
+      new Message("José", userInput.toString(), ChatMessageType.USER),
     ]);
-
-    await freeze(100);
 
     const response = await ChatbotService.askChatbot(userInput.toString());
 

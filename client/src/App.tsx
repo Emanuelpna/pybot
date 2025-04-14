@@ -42,7 +42,9 @@ function App() {
 
   return (
     <>
-      <Logo />
+      <div className="appContainer">
+        <Logo />
+      </div>
 
       <ChatContainer footer={<ChatInput onSubmitCallback={onFormSubmit} />}>
         {messages.map((message) => (

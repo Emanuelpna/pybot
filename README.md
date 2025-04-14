@@ -17,13 +17,11 @@ Escolhemos como tema "Curiosidades de Python" por estarmos inseridos na área de
 - **Frontend:** React (JavaScript)
 - **Backend:** FastAPI (Python)
 - **NLP:** NLTK (Natural Language Toolkit)
-- **Bibliotecas adicionais:** PyPDF2 (não usada diretamente na versão final, mas testada em protótipos)
 
 ## Estrutura do Projeto
 
 - `client/` – Interface web do chatbot (React)
 - `server/` – API que processa as mensagens usando NLTK
-- `chat.html` – Template da interface de chat (renderizado pelo FastAPI)
 - `pares` – Conjunto de padrões de perguntas/respostas (intents)
 - `custom_reflections` – Refletores para tornar a conversa mais natural
 

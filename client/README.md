@@ -47,6 +47,7 @@ O chatbot funciona a partir de um conjunto de **expressões regulares (regex)** 
 Exemplo:
 ```python
 [ r"Como usar o for em Python", ["Exemplo: for i in range(5): print(i)"] ]
+```
 
 ## Testes realizados
 O chatbot foi testado manualmente pelos integrantes do grupo: Emanuel Andrade, Mayara Mikaelly e Urias Góes
@@ -70,6 +71,7 @@ Ainda sem recursos de acessibilidade implementados
 
 ## Organização do Código
 O projeto está organizado em duas pastas principais:
+```
 📁 client/
  └── src/
      └── components/
@@ -77,6 +79,6 @@ O projeto está organizado em duas pastas principais:
 
 📁 server/
  └── main.py (FastAPI + NLTK Chatbot)
-
+```
 Este projeto foi desenvolvido como atividade da disciplina Inteligência Artificial e Machine Learning (IAML), com foco em aplicar conceitos de NLP na prática.
 

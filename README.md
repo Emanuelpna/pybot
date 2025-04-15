@@ -4,6 +4,11 @@ Para usar o projeto, é necessário iniciar ambas as aplicações web e de servi
 
 Veja detalhes de [como rodar a aplicação web](client/README.md) e de [como rodar o servidor](server/README.md)
 
+## Integrantes do Grupo
+Emanuel Andrade, 
+Mayara Mikaelly e 
+Urias Góes
+
 ## Chatbot de Curiosidades de Python
 
 Este projeto é um chatbot educacional desenvolvido com o objetivo de auxiliar iniciantes na área de programação a aprender conceitos básicos da linguagem Python de forma interativa e divertida.
@@ -40,7 +45,7 @@ Exemplo:
 
 ### Testes realizados
 
-O chatbot foi testado manualmente pelos integrantes do grupo: Emanuel Andrade, Mayara Mikaelly e Urias Góes
+O chatbot foi testado manualmente pelos integrantes do grupo
 
 Testes focaram em:
 

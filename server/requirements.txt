@@ -37,3 +37,9 @@ uvicorn==0.33.0
 uvloop==0.21.0
 watchfiles==0.24.0
 websockets==13.1
+langchain-community==0.3.24
+langchain_text_splitters==0.3.8
+sentence_transformers==4.1.0
+chromadb==1.0.12
+faiss_cpu==1.11.0
+deep_translator==1.11.4

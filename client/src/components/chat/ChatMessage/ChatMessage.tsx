@@ -1,3 +1,5 @@
+import Markdown from "react-markdown";
+
 import { ChatMessageType } from "../../../domain/models/ChatMessageType";
 
 import styles from "./styles.module.css";
@@ -19,7 +21,7 @@ export function ChatMessage({ type, sender, content }: ChatMessageProps) {
         <strong>{sender}</strong>
       </header>
 
-      {content}
+      <Markdown children={content}></Markdown>
     </article>
   );
 }

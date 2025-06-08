@@ -39,8 +39,6 @@ function App() {
         return;
       }
 
-      console.log(response.message.join("\n\n"));
-
       setMessages((messages) => [
         ...messages,
         new Message(

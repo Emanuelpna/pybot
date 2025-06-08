@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 
 """
 The original class MultiQueryRetriever for some reason only work if you have a single template variable called "question" as it is hard-coded.
-But the LLM Chain cand receive any dict with the variables, this class exists to override the generate_queries methods and send to LLM Chain the whole dict in any format and not only "question"
+But the LLM Chain can receive any dict with the variables, this class exists to override the generate_queries methods and send to LLM Chain the whole dict in any format and not only "question"
 Code Reference: https://github.com/langchain-ai/langchain/discussions/28169#discussioncomment-11297594
 """
 class PybotMultiQueryRetriever(MultiQueryRetriever):

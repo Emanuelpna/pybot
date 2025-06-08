@@ -13,26 +13,45 @@ import { ChatContainer } from "@/components/chat/ChatContainer/ChatContainer";
 import "./global.css";
 
 function App() {
+  const [isAwaitingResponse, setIsAwaitingResponse] = useState<boolean>(false);
   const [messages, setMessages] = useState<Message[]>([]);
 
   async function onFormSubmit(formData: FormData) {
-    const userInput = formData.get("user_input");
+    setIsAwaitingResponse(true);
 
-    if (!userInput) return;
+    try {
+      const userInput = formData.get("user_input");
 
-    setMessages((messages) => [
-      ...messages,
-      new Message("José", userInput.toString(), ChatMessageType.USER),
-    ]);
+      if (!userInput) {
+        setIsAwaitingResponse(false);
+        return;
+      }
 
-    const response = await ChatbotService.askChatbot(userInput.toString());
+      setMessages((messages) => [
+        ...messages,
+        new Message("José", userInput.toString(), ChatMessageType.USER),
+      ]);
 
-    if (!response) return;
+      const response = await ChatbotService.askChatbot(userInput.toString());
 
-    setMessages((messages) => [
-      ...messages,
-      new Message("PyBot", response.message, ChatMessageType.CHATBOT),
-    ]);
+      if (!response) {
+        setIsAwaitingResponse(false);
+        return;
+      }
+
+      console.log(response.message.join("\n\n"));
+
+      setMessages((messages) => [
+        ...messages,
+        new Message(
+          "PyBot",
+          response.message.join("\n\n"),
+          ChatMessageType.CHATBOT
+        ),
+      ]);
+    } finally {
+      setIsAwaitingResponse(false);
+    }
   }
 
   return (
@@ -41,7 +60,14 @@ function App() {
         <Logo />
       </div>
 
-      <ChatContainer footer={<ChatInput onSubmitCallback={onFormSubmit} />}>
+      <ChatContainer
+        footer={
+          <ChatInput
+            isAwaitingResponse={isAwaitingResponse}
+            onSubmitCallback={onFormSubmit}
+          />
+        }
+      >
         {messages.map((message) => (
           <ChatMessage
             key={message.getSentAt().toISOString()}

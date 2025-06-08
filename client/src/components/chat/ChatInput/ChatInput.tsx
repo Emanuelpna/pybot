@@ -3,12 +3,17 @@ import { SentIcon } from "@/components/icons/SentIcon";
 import { OnSubmitEventHandler, useForm } from "@/infra/hooks/useForm";
 
 import styles from "./styles.module.css";
+import { LoadingIcon } from "@/components/icons/LoadingIcon/LoadingIcon";
 
 type ChatInputProps = {
+  isAwaitingResponse: boolean;
   onSubmitCallback: OnSubmitEventHandler;
 };
 
-export function ChatInput({ onSubmitCallback }: ChatInputProps) {
+export function ChatInput({
+  isAwaitingResponse,
+  onSubmitCallback,
+}: ChatInputProps) {
   const { onFormSubmit, registerInput, setInputValue } = useForm(
     async (formData) => {
       await onSubmitCallback(formData);
@@ -30,7 +35,7 @@ export function ChatInput({ onSubmitCallback }: ChatInputProps) {
           />
 
           <button type="submit" className={styles.button}>
-            <SentIcon />
+            {isAwaitingResponse ? <LoadingIcon /> : <SentIcon />}
           </button>
         </label>
       </form>

@@ -21,11 +21,10 @@ class LLMAgentCreator:
         llm_creator = LLMAgentCreator()
 
         files = get_files_from_folder("./resources/python_docs")
-        # for file in files:
-        #     print("Processing file: ", file)
-        #     llm_creator.add_document(file)
-        #     print("  -> File processing finished")
-        llm_creator.add_document("installing.txt")
+        for file in files:
+            print("Processing file: ", file)
+            llm_creator.add_document(file)
+            print("  -> File processing finished")
 
         llm_creator.create_vector_store()
 

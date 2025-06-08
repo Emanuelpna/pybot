@@ -29,7 +29,7 @@ function App() {
 
       setMessages((messages) => [
         ...messages,
-        new Message("José", userInput.toString(), ChatMessageType.USER),
+        new Message("Você", userInput.toString(), ChatMessageType.USER),
       ]);
 
       const response = await ChatbotService.askChatbot(userInput.toString());

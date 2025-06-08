@@ -1,11 +1,11 @@
 .chatMessage {
-  --shadow-color: 344deg 14% 79%;
-
-  padding: 24px;
-  /* min-height: 80px; */
+  padding: 32px;
+  max-width: 85%;
   width: fit-content;
-  background: #fff5ed;
-  border-radius: 24px;
+  color: #1f1f1f;
+  background: #f5f7f2;
+  border-radius: 28px;
+  box-shadow: var(--shadow-elevation-medium);
 }
 
 .chatMessage.botResponse {
@@ -30,8 +30,8 @@
   font-family: "Courier New", Courier, monospace;
   font-size: 14px;
   line-height: 1.2;
-  color: #fff;
-  background-color: black;
+  color: #f5f7f2;
+  background-color: #1f1f1f;
   white-space: pre-wrap;
   border-radius: 0.3em;
   padding: 4px 5px 6px;

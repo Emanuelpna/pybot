@@ -34,7 +34,11 @@ export function ChatInput({
             {...registerInput("user_input")}
           />
 
-          <button type="submit" className={styles.button}>
+          <button
+            type="submit"
+            className={styles.button}
+            disabled={isAwaitingResponse}
+          >
             {isAwaitingResponse ? <LoadingIcon /> : <SentIcon />}
           </button>
         </label>

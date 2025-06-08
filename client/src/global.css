@@ -1,3 +1,22 @@
+/* https://www.joshwcomeau.com/shadow-palette/ */
+:root {
+  --shadow-color: 248deg 6% 58%;
+  --shadow-elevation-low: 0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.35),
+    0.4px 0.8px 1px -1.4px hsl(var(--shadow-color) / 0.32),
+    1px 1.9px 2.3px -2.8px hsl(var(--shadow-color) / 0.3);
+  --shadow-elevation-medium: 0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.37),
+    0.7px 1.5px 1.8px -0.9px hsl(var(--shadow-color) / 0.35),
+    1.9px 3.8px 4.6px -1.9px hsl(var(--shadow-color) / 0.33),
+    4.8px 9.6px 11.6px -2.8px hsl(var(--shadow-color) / 0.31);
+  --shadow-elevation-high: 0.3px 0.5px 0.6px hsl(var(--shadow-color) / 0.34),
+    1.2px 2.4px 2.9px -0.4px hsl(var(--shadow-color) / 0.33),
+    2.3px 4.6px 5.6px -0.8px hsl(var(--shadow-color) / 0.32),
+    3.8px 7.7px 9.3px -1.2px hsl(var(--shadow-color) / 0.31),
+    6.3px 12.5px 15.1px -1.6px hsl(var(--shadow-color) / 0.3),
+    10px 19.9px 24.1px -2px hsl(var(--shadow-color) / 0.29),
+    15.3px 30.7px 37px -2.4px hsl(var(--shadow-color) / 0.29),
+    22.8px 45.5px 55px -2.8px hsl(var(--shadow-color) / 0.28);
+}
 * {
   margin: 0;
   padding: 0;
@@ -9,8 +28,8 @@ body {
   height: 100vh;
   display: flex;
   flex-flow: column nowrap;
-  background: #fff;
-  background: radial-gradient(circle at bottom, #e5a8b9, transparent 80%);
+  background: #dfdee6;
+  /* background: radial-gradient(circle at bottom, #e5a8b9, #0a0b0d 80%); */
   font-family: sans-serif;
 }
 
